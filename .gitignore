@@ -1,0 +1,7 @@
+# Ignore compiled executables
+*.exe
+
+# Optional: ignore common build folders
+build/
+bin/
+obj/
