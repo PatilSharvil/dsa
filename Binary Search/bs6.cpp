@@ -3,28 +3,30 @@
 using namespace std;
 
 int getSqrt(int n) {
-    int s = 0;
-    int e = n;
-    int mid = s + (e - s) / 2;
+    long long s = 0;
+    long long e = n;
+    long long mid;
 
     while (s <= e) {
+        mid = s + (e - s) / 2;
 
-        if ((mid * mid) == n) {
+        long long square = mid * mid;
+
+        if (square == n) {
             return mid;
-        } else if ((mid * mid) > n) {
+        } 
+        else if (square > n) {
             e = mid - 1;
-        } else {
+        } 
+        else {
             s = mid + 1;
         }
-
-        mid = s + (e - s) / 2;
     }
 
-    return s;
+    return e;  
 }
 
-int main(int argc, char** args) { 
-    cout << getSqrt(121);
-    
+int main() {
+    cout << getSqrt(8);  
     return 0;
 }
